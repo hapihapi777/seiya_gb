@@ -1,0 +1,101 @@
+button {
+  /* background-color: transparent; */
+  /* border: none; */
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  appearance: none;
+}
+
+/* 
+#Audio-Control {
+  overflow: hidden;
+}
+
+#Audio-Control button {
+  border: 1px solid #ccc;
+  width: 40px;
+  float: left;
+  padding: 5px 0;
+  -webkit-transition: all 0.6s ease;
+  -moz-transition: all 0.6s ease;
+  -o-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+}
+
+#Audio-Control button.on {
+  border-left: none;
+}
+
+#Audio-Control button.off {
+  border-right: none;
+}
+
+#Audio-Control button.active {
+  background: #ccc;
+}
+
+#Audio-Control button:not(.active):hover {
+  background: rgba(204, 204, 204, 0.3);
+} */
+body {
+  display: flex;
+  flex-direction: row;
+}
+.flex-left {
+  width: 10%;
+}
+.flex-center {
+  margin: 16px;
+  width: 100%;
+  height: 100%;
+}
+#palette {
+  width: 70%;
+  height: 60%;
+  /* position: relative; */
+}
+#gazou {
+  width: 1050px;
+  height: 600px;
+}
+#hidokei {
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+}
+
+#next {
+  margin: 0px;
+  padding: 0px;
+  width: 120px;
+  height: 80px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.kasane{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  
+  position: absolute;
+  top: 40%;
+  left: 57%;
+}
+
+#commentbox {
+  width: 67%;
+  height: 100%;
+  background-color: #eee;
+  /* margin: auto;
+  margin-top: 50px; */
+  border: solid 3px #6089e7;
+  border-radius: 10px;
+  text-align: left;
+  font-size: 24px;
+  padding: 12px 20px;
+  margin: 16px 0px;
+
+}
