@@ -16,8 +16,6 @@ const enemies = [
 const sounds = [
   { src: "bgm/zentyou 2.mp3", vol: 0.2 },
   { src: { 一回: "bgm/gb_前奏2.mp3", ループ: "bgm/gb_メイン.mp3" }, vol: 1.0 },
-  // { src: "bgm/gb 3.mp3", vol: 0.2 },
-  // { src: "bgm/gb_ori.mp3", vol: 0.6 },
   { src: "bgm/ペガサス幻想 2.mp3", vol: 1 },
   { src: "bgm/ソルジャードリーム.mp3", vol: 1 },
 ];
