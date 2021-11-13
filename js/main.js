@@ -6,7 +6,7 @@ document.getElementById("reload").addEventListener("click", Reload);
 let mute = true;
 
 let N = GetRandom(enemies.length) - 1;
-let test = new battle(enemies[N].rate, enemies[N].name);
+let test = new battle(enemies[N].rate, enemies[N].name[0]);
 
 
 function GetRandom(n) {

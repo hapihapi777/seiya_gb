@@ -1,4 +1,7 @@
 body {
+  display: flex;
+  flex-direction: row;
+
   -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
      -khtml-user-select: none; /* Konqueror HTML */
@@ -6,6 +9,8 @@ body {
         -ms-user-select: none; /* Internet Explorer/Edge */
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
+
+  background-color: rgb(217, 224, 255);
 }
 
 button {
@@ -17,43 +22,8 @@ button {
   appearance: none;
 }
 
-/* 
-#Audio-Control {
-  overflow: hidden;
-}
-
-#Audio-Control button {
-  border: 1px solid #ccc;
-  width: 40px;
-  float: left;
-  padding: 5px 0;
-  -webkit-transition: all 0.6s ease;
-  -moz-transition: all 0.6s ease;
-  -o-transition: all 0.6s ease;
-  transition: all 0.6s ease;
-}
-
-#Audio-Control button.on {
-  border-left: none;
-}
-
-#Audio-Control button.off {
-  border-right: none;
-}
-
-#Audio-Control button.active {
-  background: #ccc;
-}
-
-#Audio-Control button:not(.active):hover {
-  background: rgba(204, 204, 204, 0.3);
-} */
-body {
-  display: flex;
-  flex-direction: row;
-}
 .flex-left {
-  width: 10%;
+  width: 15%;
 }
 .flex-center {
   margin: 16px;
@@ -61,24 +31,27 @@ body {
   height: 100%;
 }
 #palette {
-  width: 70%;
-  height: 60%;
+  /* width: 70%;
+  height: 60%; */
+  width: 960px;
+  height: 600px;
   /* position: relative; */
 }
 #gazou {
-  width: 1050px;
+  width: 960px;
   height: 600px;
 }
 #hidokei {
-  width: 70%;
-  height: 70%;
+  width: 400px;
+  height: 400px;
   border-radius: 50%;
+  opacity: 0.8;
 }
 
 #next {
   margin: 0px;
   padding: 0px;
-  width: 120px;
+  width: 100px;
   height: 80px;
   border-radius: 50%;
   cursor: pointer;
@@ -96,8 +69,8 @@ body {
 }
 
 #commentbox {
-  width: 67%;
-  height: 100%;
+  width: 900px;
+  height: 128px;
   background-color: #eee;
   /* margin: auto;
   margin-top: 50px; */
@@ -106,10 +79,34 @@ body {
   text-align: left;
   font-size: 24px;
   padding: 12px 20px;
-  margin: 16px 0px;
+  margin: 0px;
 
 }
 
 .noclick {
   pointer-events: none;
+  opacity: 0.3;
+}
+
+.wait_motion {
+  animation: lever_wait 0.3s 3;
+  pointer-events: none; /* クリック無効を追加 */
+}
+@keyframes lever_wait {
+  25% {
+    opacity: 0.5;
+    transform: translate(1px, 1px);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translate(-1px, -1px);
+  }
+  75% {
+    opacity: 0.5;
+    transform: translate(1px, -1px);
+  }
+  100% {
+    opacity: 0.5;
+    transform: translate(-1px, 1px);
+  }
 }
