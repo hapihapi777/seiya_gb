@@ -103,7 +103,7 @@ class battle {
     if (this.round > 0) {
       if (this.round > this.conti + 1) {
         this.end = true;
-        bgm.volume = 0.2;
+        if(!mute) bgm.volume = 0.2;
         console.log("end");
         let str = "乱数→ ";
         for (let i = 0; i < this.story[0][0].length; i++) {
