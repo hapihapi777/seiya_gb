@@ -110,3 +110,7 @@ button {
     transform: translate(-1px, 1px);
   }
 }
+
+.nodisp {
+  display: none;
+}

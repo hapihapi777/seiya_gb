@@ -1,4 +1,5 @@
-const seiya = [{
+const seiya = [
+  {
   コメ: { 弱: "弱", 中: "中", 強: "強"},
     name: "星矢", 
   },

@@ -13,6 +13,7 @@ class battle {
     this.phase = 0;
 
     this.story = [];
+    this.gazou = [];
 
     this.Init();
   }
@@ -40,6 +41,8 @@ class battle {
     music_off.addEventListener('click', () => {
       this.BgmOff();
     });
+
+    this.DoHyouzi(this.gazou);
 
 
 
@@ -103,12 +106,12 @@ class battle {
     if (this.round > 0) {
       if (this.round > this.conti + 1) {
         this.end = true;
-        if(!mute) bgm.volume = 0.2;
+        if (!mute) bgm.volume = 0.2;
         console.log("end");
         let str = "乱数→ ";
         for (let i = 0; i < this.story[0][0].length; i++) {
-          if(i > 0) str += ", ";
-          str += "ラウンド"  + (i + 1) + ": " + this.story[0][0][i];
+          if (i > 0) str += ", ";
+          str += "ラウンド" + (i + 1) + ": " + this.story[0][0][i];
         }
         comment1.textContent = "継続率: " + this.rate + "％";
         comment2.textContent = str;
@@ -217,7 +220,7 @@ class battle {
         コメ: { a: "星矢", b: "『アテナの為にも 俺は負けない』", c: "WIN" },
         src: "images/勝利.jpg"
       },
-    
+
     ];
 
 
@@ -249,6 +252,10 @@ class battle {
         win_scenario[7]);
     }
 
+    result.forEach(e => {
+      this.gazou.push(e.src);
+      // console.log(e.src);
+    });
     // if (this.round === 3 && p === 0 && this.win === true) {
     //   this.GetBgm(3);
     // }
@@ -341,6 +348,12 @@ class battle {
     for (let i = 0; i < 8; i++) {
       result.push(lose_scenario[i]);
     }
+
+
+    result.forEach(e => {
+      this.gazou.push(e.src);
+      // console.log(e.src);
+    });
     return result;
   }
 
@@ -380,12 +393,12 @@ class battle {
     }
 
     mute = false;
-    
-    if(this.end) {
+
+    if (this.end) {
       bgm.volume = 0.2;
-    }else {
+    } else {
       bgm.volume = sounds[r].vol;
-      
+
     }
 
     document.getElementById("music_on").disabled = true;
@@ -399,6 +412,30 @@ class battle {
     document.getElementById("music_on").disabled = false;
   }
 
+
+
+
+  DoHyouzi(arr) {
+    const removeDuplicateValues = ([...array]) => {
+      return array.filter((value, index, self) => self.indexOf(value) === index);
+    }
+    const hyouzi = removeDuplicateValues(arr);
+
+    const div1 = document.getElementById("yomikomi");
+    
+    hyouzi.forEach(e => {
+      const newImg = document.createElement("img");
+      newImg.src = e;
+      div1.appendChild(newImg);
+      // console.log(e);
+    });
+
+    if (this.win) {
+      const newImg = document.createElement("img");
+      newImg.src = "images/火時計レインボー.gif";
+      div1.appendChild(newImg);
+    }
+
+  }
+
 }
-
-

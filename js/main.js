@@ -1,6 +1,8 @@
 const bgm = new Audio();
 const img = document.getElementById("gazou");
 
+LoadTest();
+
 document.getElementById("reload").addEventListener("click", Reload);
 
 let mute = true;
@@ -17,4 +19,16 @@ function GetRandom(n) {
 
 function Reload() {
   window.location.reload();
+}
+
+
+function LoadTest() {
+  BgmLoadTest(sounds[1].src.ループ);
+}
+
+function BgmLoadTest(s) {
+  bgm.src = s;
+  bgm.loop = false;
+  bgm.volume = 0.8;
+  // bgm.play();
 }
