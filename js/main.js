@@ -29,6 +29,6 @@ function LoadTest() {
 function BgmLoadTest(s) {
   bgm.src = s;
   bgm.loop = false;
-  bgm.volume = 0.8;
+  bgm.volume = 0;
   // bgm.play();
 }

@@ -421,20 +421,22 @@ class battle {
     }
     const hyouzi = removeDuplicateValues(arr);
 
-    const div1 = document.getElementById("yomikomi");
+    const yomikomi = document.getElementById("yomikomi");
     
     hyouzi.forEach(e => {
       const newImg = document.createElement("img");
       newImg.src = e;
-      div1.appendChild(newImg);
+      yomikomi.appendChild(newImg);
       // console.log(e);
     });
 
     if (this.win) {
       const newImg = document.createElement("img");
       newImg.src = "images/火時計レインボー.gif";
-      div1.appendChild(newImg);
+      yomikomi.appendChild(newImg);
     }
+
+    yomikomi.remove();
 
   }
 
