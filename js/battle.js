@@ -416,9 +416,7 @@ class battle {
 
 
   DoHyouzi(arr) {
-    const removeDuplicateValues = ([...array]) => {
-      return array.filter((value, index, self) => self.indexOf(value) === index);
-    }
+ 
     const hyouzi = removeDuplicateValues(arr);
 
     const yomikomi = document.getElementById("yomikomi");
@@ -436,7 +434,7 @@ class battle {
       yomikomi.appendChild(newImg);
     }
 
-    yomikomi.remove();
+    // yomikomi.remove();
 
   }
 

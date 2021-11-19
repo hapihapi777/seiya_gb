@@ -21,14 +21,22 @@ function Reload() {
   window.location.reload();
 }
 
+function removeDuplicateValues([...array]) { // 重複削除の関数
+  return array.filter((value, index, self) => self.indexOf(value) === index);
+}
+
 
 function LoadTest() {
+  BgmLoadTest(sounds[1].src.一回);
   BgmLoadTest(sounds[1].src.ループ);
+  BgmLoadTest(sounds[4]);
+
 }
 
 function BgmLoadTest(s) {
   bgm.src = s;
   bgm.loop = false;
   bgm.volume = 0;
+  // bgm.onloadstart();
   // bgm.play();
 }
